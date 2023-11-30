@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActionSheetService, ShowActionsOptions, ActionSheetButtonStyle } from '../services/action-sheet.service';
+import { ClipboardService } from '../services/clipboard.service';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ export class HomePage {
 
   constructor(
     private actionSheetService : ActionSheetService,
+    private clipboardService: ClipboardService
 
   ) {}
 
@@ -30,6 +32,16 @@ export class HomePage {
     } catch (error) {
       console.error('Error al mostrar el Action Sheet en el componente:', error);
     }
+  }
+
+  async copyTextToClipboard() {
+    const textToCopy = '¡Hola, mundo!';
+    await this.clipboardService.copyToClipboard(textToCopy);
+  }
+
+  async pasteTextFromClipboard() {
+    const copiedText = await this.clipboardService.getFromClipboard();
+    console.log('Texto copiado:', copiedText);
   }
 
 }
