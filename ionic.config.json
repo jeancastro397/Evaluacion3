@@ -1,5 +1,7 @@
 {
   "name": "blogNoticias",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
