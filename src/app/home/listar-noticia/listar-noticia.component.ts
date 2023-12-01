@@ -17,15 +17,15 @@ export class ListarNoticiaComponent implements OnInit {
   constructor(
     private actionSheetService: ActionSheetService,
     private clipboardService: ClipboardService,
-    ) { }
+  ) { }
 
 
   async mostrarActionSheet() {
     const options: ShowActionsOptions = {
-      title: 'Funciona el ActionSheet',
+      title: 'Opciones Noticia',
       message: 'Mensaje opcional',
       options: [
-        { title: 'Opción 1', style: ActionSheetButtonStyle.Default },
+        { title: 'Compartir', style: ActionSheetButtonStyle.Default },
         { title: 'Opción 2', style: ActionSheetButtonStyle.Default },
         { title: 'Cancelar', style: ActionSheetButtonStyle.Cancel },
       ],
@@ -34,23 +34,28 @@ export class ListarNoticiaComponent implements OnInit {
     try {
       const result = await this.actionSheetService.showActions(options);
       console.log('Opción seleccionada:', result.index);
+
+      if (result.index === 0) {
+        await this.copyTextToClipboard();
+      }
+
     } catch (error) {
       console.error('Error al mostrar el Action Sheet en el componente:', error);
     }
   }
 
-  
-// OJITOOO
-  async copyTextToClipboard() {
-    const textToCopy = '¡Hola, mundo!';
-    await this.clipboardService.copyToClipboard(textToCopy);
-  }
 
-  async pasteTextFromClipboard() {
-    const copiedText = await this.clipboardService.getFromClipboard();
-    console.log('Texto copiado:', copiedText);
+  // OJITOOO
+  async copyTextToClipboard() {
+    const baseUrl = 'http://localhost:8100/home/'; // Cambia esto por la base de tu URL
+    const noticiaUrl = `${baseUrl}${this.noticia.id}`; // Asegúrate de que 'id' sea el identificador correcto de tu noticia
+
+    const textToCopy = `${this.noticia.titulo}\n${this.noticia.descripcion}\nMás información: \n${noticiaUrl}`;
+
+    await this.clipboardService.copyToClipboard(textToCopy);
+    console.log('Noticia copiada al portapapeles:', textToCopy);
   }
-// FIN OJITO
+  // FIN OJITO
 
   ngOnInit() { }
 

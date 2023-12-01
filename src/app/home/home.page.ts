@@ -13,6 +13,7 @@ export class HomePage {
   public noticias: Noticias[] = [
 
     {
+      "id":1,
       "titulo": "Pokémon GO: Captura a Pikachu Bailarín en Edición Especial",
       "fecha": "2023-11-25",
       "categoria": "Realidad Aumentada",
@@ -20,6 +21,7 @@ export class HomePage {
       "fuente": "PokéExplorerMag"
     },
     {
+      "id":2,
       "titulo": "Super Mario Kart: Nuevos Power-ups Incluyen Caparazón de Confeti y Plátano Resbaladizo",
       "fecha": "2023-11-24",
       "categoria": "Carreras",
@@ -27,6 +29,7 @@ export class HomePage {
       "fuente": "MushroomCircuitNews"
     },
     {
+      "id":3,
       "titulo": "League of Legends: Nuevo Campeón 'Cantante de Ópera' Anunciado",
       "fecha": "2023-11-23",
       "categoria": "MOBA",
@@ -34,6 +37,7 @@ export class HomePage {
       "fuente": "SummonersHerald"
     },
     {
+      "id":4,
       "titulo": "Animal Crossing: Tom Nook Anuncia Planes para Construir una Autopista de Nook",
       "fecha": "2023-11-22",
       "categoria": "Simulación",
@@ -41,6 +45,7 @@ export class HomePage {
       "fuente": "NookTimesDaily"
     },
     {
+      "id":5,
       "titulo": "Call of Duty: Modo 'Broma de Cosquillas' Disponible en la Próxima Actualización",
       "fecha": "2023-11-21",
       "categoria": "FPS",
@@ -48,6 +53,7 @@ export class HomePage {
       "fuente": "WarComedyGazette"
     },
     {
+      "id":6,
       "titulo": "The Sims 5: Ahora Puedes Crear Sims Hiperrealistas... ¡Demasiado Realistas!",
       "fecha": "2023-11-20",
       "categoria": "Simulación de Vida",
@@ -55,6 +61,7 @@ export class HomePage {
       "fuente": "SimLifeMagazine"
     },
     {
+      "id":7,
       "titulo": "Overwatch: Nuevo Mapa 'Campo de Batalla de Almohadas' para el Modo de Siesta",
       "fecha": "2023-11-19",
       "categoria": "Shooter en Primera Persona",
@@ -62,6 +69,7 @@ export class HomePage {
       "fuente": "OverwatchDreamer"
     },
     {
+      "id":8,
       "titulo": "Fortnite: Skin de 'Bailarín Disco' Hace que los Enemigos Bailen en Lugar de Pelear",
       "fecha": "2023-11-18",
       "categoria": "Battle Royale",
@@ -69,6 +77,7 @@ export class HomePage {
       "fuente": "FortniteFunkyTimes"
     },
     {
+      "id":9,
       "titulo": "Assassin's Creed: Nueva Habilidad 'Parkour Acuático' Permite a los Asesinos Nadar como Delfines",
       "fecha": "2023-11-17",
       "categoria": "Acción y Aventura",
@@ -76,6 +85,7 @@ export class HomePage {
       "fuente": "CreedChronicle"
     },
     {
+      "id":10,
       "titulo": "Minecraft Dungeons: Encuentra el Tesoro Escondido del 'Cubo de Queso'",
       "fecha": "2023-11-16",
       "categoria": "Aventura",
@@ -83,6 +93,7 @@ export class HomePage {
       "fuente": "BlockQuestExplorer"
     },
     {
+      "id":11,
       "titulo": "Dota 2: Nuevo Héroe 'Mago de la Pizza' Lanza Poderes con Sabor a Tomate",
       "fecha": "2023-11-15",
       "categoria": "MOBA",
@@ -90,6 +101,7 @@ export class HomePage {
       "fuente": "DotaDigest"
     },
     {
+      "id":12,
       "titulo": "Cyberpunk 2078: Ahora Puedes Personalizar Tu Apartamento con Gatos Cibernéticos",
       "fecha": "2023-11-14",
       "categoria": "RPG de Acción",
@@ -97,6 +109,7 @@ export class HomePage {
       "fuente": "CyberLifeWeekly"
     },
     {
+      "id":13,
       "titulo": "Super Smash Bros. Ultimate: Nuevo Luchador 'Abuela de la Repostería' con Ataques de Galletas",
       "fecha": "2023-11-13",
       "categoria": "Lucha",

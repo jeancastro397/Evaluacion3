@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,9 +16,24 @@
             android:launchMode="singleTask"
             android:exported="true">
 
+            <!-- Filtro de intención existente para abrir la aplicación -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Filtro de intención para Deep Linking -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Especifica tu esquema de URL personalizado aquí -->
+                <data
+                    android:scheme="http"
+                    android:host="localhost:8100/"
+                    android:pathPrefix="" />
             </intent-filter>
 
         </activity>
@@ -36,6 +50,5 @@
     </application>
 
     <!-- Permissions -->
-
     <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
