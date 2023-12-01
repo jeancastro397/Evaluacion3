@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Noticias } from './../../models/noticias';
 import { ClipboardService } from '../../services/clipboard.service';
 import { ActionSheetService, ShowActionsOptions, ActionSheetButtonStyle } from '../../services/action-sheet.service';
+import { ScreenReaderService } from './../../services/screen-reader.service';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class ListarNoticiaComponent implements OnInit {
   constructor(
     private actionSheetService: ActionSheetService,
     private clipboardService: ClipboardService,
+    private screenReaderService: ScreenReaderService,
   ) { }
 
 
@@ -56,6 +58,16 @@ export class ListarNoticiaComponent implements OnInit {
     console.log('Noticia copiada al portapapeles:', textToCopy);
   }
   // FIN OJITO
+
+
+  // SCREEN READER
+  public async leerNoticia() {
+    try {
+      await this.screenReaderService.leerNoticia(this.noticia);
+    } catch (error) {
+      console.error('Error al leer la noticia:', error);
+    }
+  }
 
   ngOnInit() { }
 

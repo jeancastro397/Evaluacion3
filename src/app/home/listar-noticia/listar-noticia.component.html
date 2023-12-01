@@ -1,4 +1,4 @@
-<article>
+<article role="article" aria-live="assertive">
   <ion-card>
     <ion-card-header>
 
@@ -13,7 +13,6 @@
             </ion-button>
           </ion-col>
         </ion-row>
-
       </ion-card-subtitle>
 
       <ion-card-title>
@@ -29,11 +28,12 @@
         <ion-item>
           Categoría: {{ noticia.categoria }}
         </ion-item>
-        <ion-item>
+        <ion-item aria-live="polite">
           {{ noticia.descripcion }}
         </ion-item>
       </ion-list>
     </ion-card-content>
 
   </ion-card>
+  <ion-button (click)="leerNoticia()"> <ion-icon name="ear-outline"></ion-icon> Escuchar </ion-button>
 </article>
