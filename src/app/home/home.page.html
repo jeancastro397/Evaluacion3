@@ -20,4 +20,6 @@
     <ion-button (click)="copyTextToClipboard()">Copiar al Portapapeles</ion-button>
     <ion-button (click)="pasteTextFromClipboard()">Pegar desde el Portapapeles</ion-button>
   </div>
+  <app-listar-noticia *ngFor="let n of noticias" [noticia]="n">
+  </app-listar-noticia>
 </ion-content>
