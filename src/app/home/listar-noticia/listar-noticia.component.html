@@ -1,6 +1,21 @@
 <article>
   <ion-card>
     <ion-card-header>
+
+      <ion-card-subtitle class="ion-margin">
+        <ion-row class="ion-justify-content-center">
+          <ion-col class="ion-margin">
+            {{ noticia.fuente }}
+          </ion-col>
+          <ion-col size="1">
+            <ion-button (click)="mostrarActionSheet()" fill="clear">
+              <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </ion-card-subtitle>
+
       <ion-card-title>
         Titulo: {{ noticia.titulo }}
       </ion-card-title>
@@ -16,9 +31,6 @@
         </ion-item>
         <ion-item>
           {{ noticia.descripcion }}
-        </ion-item>
-        <ion-item>
-          Fuente: {{ noticia.fuente }}
         </ion-item>
       </ion-list>
     </ion-card-content>

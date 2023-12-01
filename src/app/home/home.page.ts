@@ -11,7 +11,7 @@ import { Noticias } from './../models/noticias';
 export class HomePage {
 
   public noticias: Noticias[] = [
-    
+
     {
       "titulo": "Pokémon GO: Captura a Pikachu Bailarín en Edición Especial",
       "fecha": "2023-11-25",
@@ -105,39 +105,5 @@ export class HomePage {
     },
   ]
 
-  constructor(
-    private actionSheetService : ActionSheetService,
-    private clipboardService: ClipboardService
-
-  ) {}
-
-  async mostrarActionSheet() {
-    const options: ShowActionsOptions = {
-      title: 'Funciona el ActionSheet',
-      message: 'Mensaje opcional',
-      options: [
-        { title: 'Opción 1', style: ActionSheetButtonStyle.Default },
-        { title: 'Opción 2', style: ActionSheetButtonStyle.Default },
-        { title: 'Cancelar', style: ActionSheetButtonStyle.Cancel },
-      ],
-    };
-
-    try {
-      const result = await this.actionSheetService.showActions(options);
-      console.log('Opción seleccionada:', result.index);
-    } catch (error) {
-      console.error('Error al mostrar el Action Sheet en el componente:', error);
-    }
-  }
-
-  async copyTextToClipboard() {
-    const textToCopy = '¡Hola, mundo!';
-    await this.clipboardService.copyToClipboard(textToCopy);
-  }
-
-  async pasteTextFromClipboard() {
-    const copiedText = await this.clipboardService.getFromClipboard();
-    console.log('Texto copiado:', copiedText);
-  }
-
+  constructor() { }
 }
