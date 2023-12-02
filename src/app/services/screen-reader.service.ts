@@ -10,7 +10,7 @@ export class ScreenReaderService {
 
   constructor() { }
 
-  public async habilitado(): Promise<boolean>{
+  public async habilitado(): Promise<boolean> {
     try {
       const estado = await ScreenReader.isEnabled();
       return estado.value;
@@ -20,19 +20,20 @@ export class ScreenReaderService {
     }
   }
 
-  public async hablar(opciones: SpeakOptions): Promise<void>{
+  public async hablar(opciones: SpeakOptions): Promise<void> {
     try {
       await ScreenReader.speak(opciones);
     } catch (error) {
-      console.error('Error al hablar: ',error)
+      console.error('Error al hablar: ', error)
     }
   }
 
   public async leerNoticia(noticia: Noticias): Promise<void> {
     const opciones: SpeakOptions = {
       value: `${noticia.titulo}. ${noticia.descripcion}`,
+      language: "es",
     };
-  
+
     try {
       await this.hablar(opciones);
     } catch (error) {
@@ -47,7 +48,7 @@ export class ScreenReaderService {
   public async agregarEscucha(): Promise<PluginListenerHandle> {
     try {
       const listener = await ScreenReader.addListener('stateChange', this.estadoCambiadoListener);
-  
+
       return listener;
     } catch (error) {
       console.error('Error al agregar escucha:', error);
